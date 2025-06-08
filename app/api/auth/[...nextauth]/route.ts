@@ -5,8 +5,8 @@ const handler = NextAuth({
     CredentialsProvider({
         name: 'Email',
         credentials: {
-          username: { label: 'email', type: 'text', placeholder: '' },
-          password: { label: 'password', type: 'password', placeholder: '' },
+          username: { label: 'email', type: 'text', placeholder: 'Enter Your Email' },
+          password: { label: 'password', type: 'password', placeholder: 'Enter Your Password' },
         },
         async authorize(credentials: any) {
             
@@ -16,6 +16,7 @@ const handler = NextAuth({
         },
       })
   ],
+   secret: process.env.NEXTAUTH_SECRET
 })
 
 export { handler as GET, handler as POST }
