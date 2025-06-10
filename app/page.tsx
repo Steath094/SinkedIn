@@ -1,10 +1,14 @@
-"use client";
-import { SessionProvider, signIn, signOut, useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
+import { SessionProvider, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession();
+  if (session) {
+    redirect('/feed')
+  }
   return (
    <main className="flex flex-col">
     <section className="flex w-full h-screen justify-center items-center gap-4">
