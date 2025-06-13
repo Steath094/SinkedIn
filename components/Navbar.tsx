@@ -13,11 +13,11 @@ export default async function Navbar() {
             <Image src={'/logo.jpg'} alt="Logo" width={45} height={45}></Image>
         </div>
         <div className='flex gap-12'>
-            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><HomeIcon/>Home</Link></div>
-            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><Users/>Network</Link></div>
-            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><Briefcase/>Jobs</Link></div>
-            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><MessageSquare/>Chat</Link></div>
-            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><Bell/>Notices</Link></div>
+            <div className='flex justify-center items-center text-center'><Link href={'/feed'} className='flex justify-center items-center flex-col'><HomeIcon />Home</Link></div>
+            <div className='flex justify-center items-center text-center'><Link href={'/network'} className='flex justify-center items-center flex-col'><Users/>Network</Link></div>
+            <div className='flex justify-center items-center text-center'><Link href={'/jobs'} className='flex justify-center items-center flex-col'><Briefcase/>Jobs</Link></div>
+            <div className='flex justify-center items-center text-center'><Link href={'/addPosts'} className='flex justify-center items-center flex-col'><MessageSquare/>Chat</Link></div>
+            <div className='flex justify-center items-center text-center'><Link href={'/notification'} className='flex justify-center items-center flex-col'><Bell/>Notices</Link></div>
         </div>
         <div className='flex relative w-1/4'>
             <input type="text" placeholder='Search...' className='w-full pl-10 pr-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 '/>
@@ -28,7 +28,7 @@ export default async function Navbar() {
         <div className='flex gap-4 '>
             <div className='w-12 h-12 p-2 rounded-full border flex justify-center items-center'>
                 {/* <Image src={}></Image> */}
-                <User2 width='100%' height='100%'/>
+                <Link href={'/profile'}><User2 width='100%' height='100%'/></Link>
             </div>
             <div className='flex flex-col'>
                 <h1>{session ? userName: <>username</>}</h1>
